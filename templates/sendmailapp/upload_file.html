@@ -1,0 +1,16 @@
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+      <h4 class="modal-title">Update </h4>
+    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+  </div>
+  <div class="modal-body">
+
+    <form action="{% url 'uplaod' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="myfile">
+      <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+  </div>
+</div>
+</div>

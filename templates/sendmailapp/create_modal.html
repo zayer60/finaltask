@@ -1,0 +1,16 @@
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+      <h4 class="modal-title">Create Group</h4>
+    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+  </div>
+  <div class="modal-body">
+
+    <form action="{% url 'group-create' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+</div>
