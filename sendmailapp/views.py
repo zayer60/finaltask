@@ -131,9 +131,8 @@ def simple_upload(request):
         patient_resource = PatientResource()
         dataset = Dataset()
         new_patients = request.FILES['myfile']
-
+        #import_data = dataset.load(new_patients.read(), format='xlsx')
         imported_data = dataset.load(new_patients.read(), format='xlsx')
-        # print(imported_data)
         for data in imported_data:
             pat,created = Patient.objects.get_or_create(pk=data[0])
             pat.groups.all().delete()
